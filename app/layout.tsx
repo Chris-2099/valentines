@@ -7,6 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <title> Be My Valentine? </title>
       <body>
         {children}
       </body>

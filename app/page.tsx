@@ -1,13 +1,36 @@
+'use client'
+import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
+
+
 export default function Home() {
+  const searchParams = useSearchParams();
+  const name = searchParams.get('name') || 'Friend';
+
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-center text-pink-600 mb-4">
-          Welcome
-        </h1>
-        <p className="text-center text-gray-600">
-          Your Valentine's Day project is ready to go!
-        </p>
+    <div className="flex h-screen items-center justify-center p-4">
+
+      {/* white box where content resides */}
+      <div className="flex flex-col bg-white h-3/4 w-1/2 rounded-lg shadow-lg items-center justify-start">
+
+        {/* IMG */}
+        <Image
+          src="/logo.png"
+          width={350}
+          height={350}
+          alt="Drawing of the dogs siting in front of a heart"
+          className="p-4"
+        />
+
+        {/* QUESTION */}
+        <h1 className="font-bold text-4xl font-serif"> {name.toUpperCase()} WILL YOU BE MY VALENTINE? </h1>
+
+        {/* YES & NO BOX */}
+        <div className="flex w-full h-1/2 border-2">
+
+        </div>
+
+
       </div>
     </div>
   );
