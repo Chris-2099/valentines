@@ -39,9 +39,11 @@ export default function Home() {
 
         {yesClicked ? (
           // celebration video once yes is clicked
-          <video autoPlay controls className="w-full h-full rounded-lg p-4">
-            <source src="/celebration.mp4" type="video/mp4" />
-          </video>
+          <img 
+            src="/celebration.gif"
+            alt="kid dancing"
+            className="w-full h-auto rounded-lg p-4 max-h-96"
+            />
         ) : (
         <>
           {/* the big question */}
