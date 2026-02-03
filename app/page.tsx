@@ -10,7 +10,7 @@ export default function Home() {
     <div className="flex h-screen items-center justify-center p-4">
 
       {/* white box where content resides */}
-      <div className="flex flex-col bg-white h-3/4 w-1/2 rounded-lg shadow-lg items-center justify-start">
+      <div className="flex flex-col bg-white h-2/3 w-1/2 rounded-lg shadow-lg items-center justify-start">
 
         {/* img */}
         <Image
@@ -18,15 +18,21 @@ export default function Home() {
           width={350}
           height={350}
           alt="Drawing of the dogs siting in front of a heart"
-          className="p-4"
+          className="p-4 max-w-full h-auto"
         />
 
         {/* the big question */}
-        <h1 className="font-bold text-4xl font-serif"> {name.toUpperCase()} WILL YOU BE MY VALENTINE? </h1>
+        <h1 className="font-bold text-4xl font-serif p-4 text-center line-clamp-2"> {name.toUpperCase()} WILL YOU BE MY VALENTINE? </h1>
 
         {/* yes & no(yes) boxes */}
-        <div className="flex w-full h-1/2 border-2">
+        <div className="flex flex-row w-full gap-6 justify-center items-center h-25">
+          <button className="bg-red-400 text-white font-semibold text-3xl rounded-full w-25 h-10 transform hover:scale-150 transition-transform">
+            YES
+          </button>
 
+          <button className="bg-gray-200 text-black font-semibold text-3xl rounded-full w-25 h-10">
+            NO
+          </button>
         </div>
 
 
