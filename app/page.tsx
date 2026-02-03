@@ -1,10 +1,25 @@
 'use client'
+import { useState } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 export default function Home() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') || 'Friend';
+  const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
+
+  // move location of no button when attempted click
+  const handleNoClick = () => {
+    setNoPosition({
+      x: Math.random() * 200 - 100,
+      y: Math.random() * 200 - 100,
+    });
+  };
+
+  // play video on yes click
+  const handleYesClick = () => {
+    
+  }
 
   return (
     <div className="flex h-screen items-center justify-center p-4">
@@ -26,11 +41,21 @@ export default function Home() {
 
         {/* yes & no(yes) boxes */}
         <div className="flex flex-row w-full gap-6 justify-center items-center h-25">
-          <button className="bg-red-400 text-white font-semibold text-3xl rounded-full w-25 h-10 transform hover:scale-150 transition-transform">
+          <button 
+            onClick={handleYesClick}
+            className="bg-red-400 text-white font-semibold text-3xl rounded-full w-25 h-10 transform hover:scale-175 transition-transform"
+          >
             YES
           </button>
 
-          <button className="bg-gray-200 text-black font-semibold text-3xl rounded-full w-25 h-10">
+          <button
+            onClick={handleNoClick}
+            style={{
+              transform: `translate(${noPosition.x}px, ${noPosition.y}px)`,
+              transition: 'transform 0.3s ease',
+            }}
+            className="bg-gray-200 text-black font-semibold text-3xl rounded-full w-25 h-10"
+          >
             NO
           </button>
         </div>
