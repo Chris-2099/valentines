@@ -8,6 +8,7 @@ export default function Home() {
   const name = searchParams.get('name') || 'Friend';
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [yesClicked, setYesClicked] = useState(false);
+  const [yesSize, setYesSize] = useState(1);
 
   // move location of no button when attempted click
   const handleNoClick = () => {
@@ -17,6 +18,7 @@ export default function Home() {
     });
 
     // note: everytime they attempt to click 'no' the yes button could grow
+    setYesSize(yesSize+0.1);
   };
 
   // play video on yes click
@@ -62,6 +64,7 @@ export default function Home() {
           <div className="flex flex-row w-full gap-12 justify-center items-center mt-16">
             <button 
               onClick={handleYesClick}
+              style={{transform: `scale(${yesSize})`}}
               className="bg-red-500 text-white font-semibold text-2xl sm:text-3xl rounded-full w-28 h-12 sm:w-28 sm:h-12 transform active:scale-110 hover:cursor-pointer hover:scale-125 transition-transform"
             >
               YES
