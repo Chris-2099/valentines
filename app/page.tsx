@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 
 export default function Home() {
   const searchParams = useSearchParams();
-  const name = searchParams.get('name') || 'Friend';
+  const name = searchParams.get('name') || 'insert-name';
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const [yesClicked, setYesClicked] = useState(false);
   const [yesSize, setYesSize] = useState(1);
@@ -17,7 +17,7 @@ export default function Home() {
       y: Math.random() * 200 - 100,
     });
 
-    // note: everytime they attempt to click 'no' the yes button could grow
+    // yes btn increases in size every attempt; full-screen possible
     setYesSize(yesSize+0.1);
   };
 
@@ -71,8 +71,8 @@ export default function Home() {
             </button>
 
             <button
-              onClick={handleNoClick}
-              onMouseEnter={handleNoClick}
+              onClick={handleNoClick} // mobile
+              onMouseEnter={handleNoClick}  // desktop
               style={{
                 transform: `translate(${noPosition.x}px, ${noPosition.y}px)`,
                 transition: 'transform 0.3s ease',
@@ -83,7 +83,7 @@ export default function Home() {
             </button>
           </div>
 
-          <p className="">'No' seems kinda fishy 😈</p>
+          <p>'No' seems kinda fishy 😈</p>
         </>
         )}
 
