@@ -30,7 +30,7 @@ export default function Home() {
 
         {/* img */}
         <Image
-          src="/logo.png"
+          src="/logo.svg"
           width={350}
           height={350}
           alt="Drawing of the dogs siting in front of a heart"
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="flex flex-row w-full gap-12 justify-center items-center mt-16">
             <button 
               onClick={handleYesClick}
-              className="bg-red-400 text-white font-semibold text-2xl sm:text-3xl rounded-full w-28 h-12 sm:w-40 sm:h-16 transform active:scale-110 hover:scale-125 transition-transform"
+              className="bg-red-500 text-white font-semibold text-2xl sm:text-3xl rounded-full w-28 h-12 sm:w-40 sm:h-16 transform active:scale-110 hover:scale-125 transition-transform"
             >
               YES
             </button>
@@ -77,7 +77,7 @@ export default function Home() {
             </button>
           </div>
 
-          <p>'No' seems kinda sassy 😈</p>
+          <p>'No' seems kinda fishy 😈</p>
         </>
         )}
 
