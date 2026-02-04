@@ -28,7 +28,7 @@ export default function Home() {
     <div className="flex h-screen items-center justify-center p-2 sm:p-4">
 
       {/* white box where content resides */}
-      <div className="flex flex-col bg-white max-w-2xl max-h-[90vh] gap-y-4 rounded-lg shadow-lg items-center justify-start">
+      <div className="flex flex-col bg-white w-full max-w-2xl max-h-[90vh] gap-y-4 rounded-lg shadow-lg items-center justify-start">
 
         {/* img */}
         <Image
@@ -41,16 +41,16 @@ export default function Home() {
 
         {yesClicked ? (
           // celebration video once yes is clicked
-          <div className="w-full object-contain justify-center items-center">
+          <>
             <p className="text-xl font-semibold"> POV: Me right now </p>
             <img 
               src="/celebration.gif"
-              width={250}
-              height={250}
+              width={500}
+              height={500}
               alt="Kid dancing"
-              className="rounded-lg p-4 w-full "
+              className="rounded-lg p-4"
             />
-          </div>
+          </>
         ) : (
         <>
           {/* the big question */}
@@ -80,7 +80,7 @@ export default function Home() {
             </button>
           </div>
 
-          <p>'No' seems kinda fishy 😈</p>
+          <p className="">'No' seems kinda fishy 😈</p>
         </>
         )}
 
