@@ -1,9 +1,10 @@
 'use client'
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
-export default function Home() {
+// content for page.tsx
+function HomePage() {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') || 'insert-name';
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
@@ -89,5 +90,14 @@ export default function Home() {
 
       </div>
     </div>
+  );
+}
+
+// page.tsx
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomePage />
+    </Suspense>
   );
 }
